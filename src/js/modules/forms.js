@@ -1,7 +1,7 @@
 //import checkNumInputs from './checkNumInputs';
 import {postData} from '../services/requests';
 
-const forms = () => {
+const forms = (state) => {
     const form = document.querySelectorAll('form'),
           inputs = document.querySelectorAll('input'),
           upload = document.querySelectorAll('[name="upload"]');
@@ -68,6 +68,12 @@ const forms = () => {
             let api;
             item.closest('.popup-design') || item.classList.contains('cacl_form') ? api = path.designer : api = path.question;
             console.log(api);
+
+            if (item.getAttribute('data-calc') == 'test'){
+                for (let key in state){
+                    formData.append(key, state[key]);
+                }
+            }
 
             postData(api, formData).then(res => {
                 console.log(res);
