@@ -125,7 +125,7 @@ const modals = () => {
 
     showModalByScroll('.fixed-gift');
 
-    showModalByTime('.popup-consultation', 5000);
+    showModalByTime('.popup-consultation', 50000);
 
 };
 
