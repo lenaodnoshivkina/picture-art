@@ -66,7 +66,7 @@ const forms = (state) => {
 
             const formData = new FormData(item);
             let api;
-            item.closest('.popup-design') || item.classList.contains('cacl_form') ? api = path.designer : api = path.question;
+            item.closest('.popup-design') || item.classList.contains('calc_form') ? api = path.designer : api = path.question;
             console.log(api);
 
             if (item.getAttribute('data-calc') == 'test'){
